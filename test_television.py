@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+from television import Television
+
+>>>>>>> Stashed changes
 def setup_method(self):
     self.tv1 = Television()
 
@@ -15,7 +20,16 @@ def test_power(self):
     assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 0'
 
 def test_mute(self):
+<<<<<<< Updated upstream
     pass
+=======
+    self.tv1.power()
+    self.tv1.channel_up()
+    self.tv1.channel_up()
+    self.tv1.channel_up()
+    self.tv1.mute()
+    assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 0'
+>>>>>>> Stashed changes
 
 def test_channel_up(self):
     self.tv1.channel_up()
@@ -31,6 +45,7 @@ def test_channel_up(self):
     assert self.tv1.__str__() == 'Power = True, Channel = 0, Volume = 0'
 
 def test_channel_down(self):
+<<<<<<< Updated upstream
     pass
 
 def test_volume_up(self):
@@ -38,3 +53,41 @@ def test_volume_up(self):
 
 def test_volume_down(self):
     pass
+=======
+    self.tv1.channel_down()
+    assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 0'
+
+    self.tv1.power()
+    self.tv1.channel_up()
+    self.tv1.channel_up()
+    self.tv1.channel_up()
+    self.tv1.channel_down()
+    assert self.tv1.__str__() == 'Power = True, Channel = 2, Volume = 0'
+
+    self.tv1.channel_down()
+    self.tv1.channel_down()
+    assert self.tv1.__str__() == 'Power = True, Channel = 0, Volume = 0'
+
+def test_volume_up(self):
+    self.tv1.power()
+    self.tv1.volume_up()
+
+    assert self.tv1.__str__() == 'Power = True, Channel = 0, Volume = 1'
+
+    self.tv1.volume_up()
+    self.tv1.volume_up()
+
+    assert self.tv1.__str__() == 'Power = True, Channel = 0, Volume = 3'
+
+def test_volume_down(self):
+    self.tv1.power()
+    self.tv1.volume_up()
+    self.tv1.volume_up()
+    self.tv1.volume_up()
+
+    self.tv1.volume_down()
+    assert self.tv1.__str__() == 'Power = True, Channel = 0, Volume = 2'
+
+    self.tv1.volume_down()
+    self.tv1.volume_down()
+    assert self.tv1.__str__() == 'Power = True, Channel = 0, Volume = 0'
