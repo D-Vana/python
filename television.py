@@ -1,17 +1,17 @@
 class Television:
-    MIN_VOLUME = 0 
-    MAX_VOLUME = 2  
-    MIN_CHANNEL = 0 
-    MAX_CHANNEL = 3 
+    MIN_VOLUME: int = 0 
+    MAX_VOLUME: int = 2  
+    MIN_CHANNEL: int = 0 
+    MAX_CHANNEL: int  = 3 
 
     def __init__(self):
         """
         Sets the base variables for the TV.
         """
-        self._status = False 
-        self._muted = False
-        self._volume = Television.MIN_VOLUME
-        self._channel = Television.MIN_CHANNEL
+        self._status: bool = False 
+        self._muted: bool = False
+        self._volume: int = Television.MIN_VOLUME
+        self._channel: int = Television.MIN_CHANNEL
 
     def power(self):
         """
